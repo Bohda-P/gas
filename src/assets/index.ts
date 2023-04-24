@@ -10,8 +10,13 @@ import Percent from './svg/percent.svg';
 import Qr from './svg/qr.svg';
 import Ticket from './svg/ticket.svg';
 import Back from './svg/back.svg';
+import Account from './svg/account.svg';
+import Price from './svg/price.svg';
+import Location from './svg/location.svg';
+import ArrowRight from './svg/arrow-right.svg';
 // Images
 import Overlay from './images/overlay.png';
+import Discount from './images/discount.png';
 
 export {
   BurgerMenu,
@@ -26,5 +31,11 @@ export {
   Qr,
   Ticket,
   Back,
+  Account,
+  Price,
+  Location,
+  ArrowRight,
+  // Images
   Overlay,
+  Discount,
 };

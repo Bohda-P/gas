@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, createContext, useEffect, useState } from 'react';
+import React, { PropsWithChildren, createContext, useContext, useEffect, useState } from 'react';
 import auth, { FirebaseAuthTypes } from '@react-native-firebase/auth';
 
 interface AuthContextProps {
@@ -13,9 +13,15 @@ interface AuthContextProps {
 
 export const AuthContext = createContext<AuthContextProps>(null);
 
+export const useUserData = (): AuthContextProps => {
+  const userData = useContext(AuthContext);
+  return { ...userData };
+};
+
 export const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
+  console.log(user);
 
   const [confirm, setConfirm] = useState<FirebaseAuthTypes.ConfirmationResult>(null);
 
@@ -38,8 +44,10 @@ export const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
       await auth().signOut();
     } catch (e) {
       setLoading(false);
+      setUser(null);
       console.error(e);
     } finally {
+      setUser(null);
       setLoading(false);
     }
   };

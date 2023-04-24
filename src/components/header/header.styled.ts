@@ -1,4 +1,6 @@
 import styled from 'styled-components/native';
+// Assets
+import { Logo } from '../../assets';
 
 export const Container = styled.View`
   flex-direction: row;
@@ -17,4 +19,19 @@ export const Title = styled.Text`
   font-weight: 600;
   font-size: 18px;
   line-height: 25px;
+`;
+
+export const LogoTitle = styled.Text`
+  font-family: 'Intro ';
+  font-style: normal;
+  font-size: 12px;
+`;
+
+export const LogoContainer = styled.View`
+  align-items: center;
+  justify-content: center;
+`;
+
+export const LogoIcon = styled(Logo)`
+  margin-bottom: 7;
 `;

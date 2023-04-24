@@ -1,21 +1,60 @@
 import React from 'react';
 // Namespace
-import { RootStackParamList } from '../../navigation';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { StackNavigatorRoutes } from '../../navigation/navigation.namespace';
 // Styled
-import { Container, Location } from './register.styled';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import {
+  Container,
+  InputContainer,
+  Label,
+  LogoIcon,
+  RegisterButton,
+  Title,
+} from './register.styled';
+import { Background, Input } from '../../components';
+import { useNavigation } from '@react-navigation/native';
+import { useHeaderHeight } from '@react-navigation/elements';
+import { Close, Flag } from '../../assets';
+import { KeyboardAvoidingView } from 'react-native';
+import { PHONE_MASK } from './constants';
+import { useUserRegisterData } from '../../providers/user-data-provider';
+import { useUserData } from '../../providers/auth-provider';
 
-type OneDayWeatherProps = NativeStackScreenProps<RootStackParamList, StackNavigatorRoutes.Register>;
+const Register: React.FC = () => {
+  const { navigate } = useNavigation();
+  const headerHeight = useHeaderHeight();
+  const { phone, setPhone } = useUserRegisterData();
+  const { signIn } = useUserData();
 
-const Register: React.FC<OneDayWeatherProps> = ({ navigation: { navigate } }) => {
+  const onRegisterNext = () => {
+    signIn(phone);
+    navigate(StackNavigatorRoutes.ConfirmRegister as never);
+  };
+
+  const cleanInput = () => {
+    setPhone('');
+  };
+
   return (
-    <Container>
-      <TouchableOpacity onPress={() => navigate(StackNavigatorRoutes.NotAuthorized as never)}>
-        <Location>To Not auth</Location>
-      </TouchableOpacity>
-    </Container>
+    <Background>
+      <KeyboardAvoidingView>
+        <Container marginTop={headerHeight}>
+          <LogoIcon />
+          <Title>ПРОЦЕС РЕЄСТРАЦІЇ</Title>
+          <InputContainer>
+            <Label>Введіть Ваш номер телефону</Label>
+            <Input
+              rightIcon={phone?.length ? Close : null}
+              leftIcon={Flag}
+              value={phone}
+              onChangeText={setPhone}
+              mask={PHONE_MASK}
+              onRightIconPress={cleanInput}
+            />
+          </InputContainer>
+          <RegisterButton isMain title="ДАЛІ" onPress={onRegisterNext} />
+        </Container>
+      </KeyboardAvoidingView>
+    </Background>
   );
 };
 
