@@ -1,9 +1,19 @@
 import React, { useEffect, useState } from 'react';
+// Components
 import { Background, Input } from '../../components';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import CheckBox from '@react-native-community/checkbox';
+// Utils
+import { firebase } from '@react-native-firebase/database';
+// Hooks
+import { useUserData } from '../../providers/auth-provider';
+import { useNavigation } from '@react-navigation/native';
+import { useHeaderHeight } from '@react-navigation/elements';
+import { useUserRegisterData } from '../../providers/user-data-provider';
 // Namespace
 import { StackNavigatorRoutes } from '../../navigation/navigation.namespace';
+import { isIos } from '../../constants';
+// Styled
 import {
   Container,
   InputContainer,
@@ -15,13 +25,6 @@ import {
   TermsTitleContainer,
   Title,
 } from './register.styled';
-import { useNavigation } from '@react-navigation/native';
-import { useHeaderHeight } from '@react-navigation/elements';
-import { useUserRegisterData } from '../../providers/user-data-provider';
-import { isIos } from '../../constants';
-
-import { firebase } from '@react-native-firebase/database';
-import { useUserData } from '../../providers/auth-provider';
 
 const DateOfBirthRegister: React.FC = () => {
   const { reset } = useNavigation();

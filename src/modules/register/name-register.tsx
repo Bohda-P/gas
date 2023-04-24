@@ -1,7 +1,13 @@
 import React from 'react';
+// Components
 import { Background, Input } from '../../components';
 // Namespace
 import { StackNavigatorRoutes } from '../../navigation/navigation.namespace';
+// Hooks
+import { useNavigation } from '@react-navigation/native';
+import { useHeaderHeight } from '@react-navigation/elements';
+import { useUserRegisterData } from '../../providers/user-data-provider';
+// Styled
 import {
   Container,
   InputContainer,
@@ -10,9 +16,6 @@ import {
   RegisterButton,
   Title,
 } from './register.styled';
-import { useNavigation } from '@react-navigation/native';
-import { useHeaderHeight } from '@react-navigation/elements';
-import { useUserRegisterData } from '../../providers/user-data-provider';
 
 const NameRegister: React.FC = () => {
   const { navigate } = useNavigation();

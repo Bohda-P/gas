@@ -1,7 +1,9 @@
 import React, { PropsWithChildren } from 'react';
+// Components
+import { StatusBar } from 'react-native';
+// Providers
 import { NavigationContainer } from '@react-navigation/native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import { StatusBar } from 'react-native';
 import { AuthProvider } from './auth-provider';
 import { UserProvider } from './user-data-provider';
 

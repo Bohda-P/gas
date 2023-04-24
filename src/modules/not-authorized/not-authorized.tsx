@@ -1,10 +1,13 @@
 import React from 'react';
-
-import { Container, SignInButton, Title } from './not-authorized.styled';
+// Hooks
 import { useHeaderHeight } from '@react-navigation/elements';
-import { Background } from '../../components';
 import { useNavigation } from '@react-navigation/native';
+// Components
+import { Background } from '../../components';
+// Namespace
 import { StackNavigatorRoutes } from '../../navigation/navigation.namespace';
+// Styled
+import { Container, SignInButton, Title } from './not-authorized.styled';
 
 const NotAuthorized: React.FC = () => {
   const headerHeight = useHeaderHeight();

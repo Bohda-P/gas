@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+// Styled
 import { Container, InputComponent } from './confirm-code.styled';
 
 interface ConfirmCodeProps {

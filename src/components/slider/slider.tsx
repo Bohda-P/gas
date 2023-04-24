@@ -1,6 +1,7 @@
 import React from 'react';
+// Components
 import Swiper from 'react-native-swiper';
-
+// Styled
 import { ImageContainer } from './slider.styled';
 
 interface SliderProps {

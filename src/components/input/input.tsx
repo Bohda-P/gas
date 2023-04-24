@@ -1,6 +1,8 @@
 import React from 'react';
-import { Container, IconLeftContainer, IconRightContainer, InputComponent } from './input.styled';
+// Namespace
 import { TextInputProps } from 'react-native';
+// Styled
+import { Container, IconLeftContainer, IconRightContainer, InputComponent } from './input.styled';
 
 interface InputProps extends TextInputProps {
   rightIcon?: React.FC;

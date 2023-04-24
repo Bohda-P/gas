@@ -1,6 +1,14 @@
-import React, { useContext, useState } from 'react';
+import React from 'react';
 // Components
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import { Background, Card, Loading, Slider } from '../../components';
+// Hooks
+import { useUserData } from '../../providers/auth-provider';
+import { useHeaderHeight } from '@react-navigation/elements';
+// Namespace
+import { IMAGES } from './constants';
+// Assets
+import { Gas, Percent, Ticket } from '../../assets';
 // Styled
 import {
   Title,
@@ -10,15 +18,9 @@ import {
   BuyButton,
   MapContainer,
 } from './home.styled';
-import { AuthContext } from '../../providers/auth-provider';
-import { useHeaderHeight } from '@react-navigation/elements';
-import { IMAGES } from './constants';
-import { Gas, Percent, Ticket } from '../../assets';
-import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 
 const Home: React.FC = () => {
-  const [code, setCode] = useState('');
-  const { loading, confirm, signIn, confirmCode, user, signOut } = useContext(AuthContext);
+  const { loading } = useUserData();
 
   const headerHeight = useHeaderHeight();
 
@@ -57,26 +59,3 @@ const Home: React.FC = () => {
 };
 
 export default Home;
-
-// if (!confirm && !user) {
-//   return (
-//     <Background>
-//       <Container>
-//         <Button title="Phone Number Sign In" onPress={() => signIn('+380954429220')} />
-//       </Container>
-//     </Background>
-//   );
-// }
-{
-  /* <TouchableOpacity onPress={() => navigate(StackNavigatorRoutes.Register as never)}>
-          <Title>Bank</Title>
-        </TouchableOpacity>
-        <TextInput
-          style={{ width: 300, height: 80, padding: 20, fontSize: 20, borderWidth: 1 }}
-          value={code}
-          keyboardType="numeric"
-          onChangeText={setCode}
-        />
-        <Button title="Confirm Code" onPress={() => confirmCode(code)} />
-        <Button title="LogLout" onPress={signOut} /> */
-}

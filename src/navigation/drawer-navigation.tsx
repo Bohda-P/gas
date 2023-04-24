@@ -1,9 +1,11 @@
 import React from 'react';
+// Components
+import { BurgerMenu } from '../components';
+// Navigation
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { DrawerNavigatorRoutes } from './navigation.namespace';
 // Stack Navigation
 import StackNavigation from './stack-navigation';
-import { BurgerMenu } from '../components';
 
 const { Screen, Navigator } = createDrawerNavigator();
 

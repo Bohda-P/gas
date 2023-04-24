@@ -1,4 +1,11 @@
 import React, { useCallback } from 'react';
+// Hooks
+import { useUserData } from '../../providers/auth-provider';
+import { useNavigation } from '@react-navigation/native';
+// Namespace
+import { BurgerMenuLinks } from './burger-menu.namespace';
+import { StackNavigatorRoutes } from '../../navigation/navigation.namespace';
+// Styled
 import {
   ButtonContainer,
   ButtonTitle,
@@ -7,10 +14,6 @@ import {
   IconContainer,
   SignOutIcon,
 } from './burger-menu.styled';
-import { BurgerMenuLinks } from './burger-menu.namespace';
-import { useUserData } from '../../providers/auth-provider';
-import { useNavigation } from '@react-navigation/native';
-import { StackNavigatorRoutes } from '../../navigation/navigation.namespace';
 
 interface BurgerMenuProps {}
 

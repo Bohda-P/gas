@@ -1,6 +1,9 @@
-import { DrawerActions, useNavigation } from '@react-navigation/native';
 import React from 'react';
+// Hooks
+import { DrawerActions, useNavigation } from '@react-navigation/native';
+// Styled
 import { Button } from './header.styled';
+// Assets
 import { BurgerMenu } from '../../assets';
 
 interface HeaderButtonProps {

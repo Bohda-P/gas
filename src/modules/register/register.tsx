@@ -1,6 +1,17 @@
 import React from 'react';
 // Namespace
 import { StackNavigatorRoutes } from '../../navigation/navigation.namespace';
+import { PHONE_MASK } from './constants';
+// Components
+import { Background, Input } from '../../components';
+import { KeyboardAvoidingView } from 'react-native';
+// Hooks
+import { useHeaderHeight } from '@react-navigation/elements';
+import { useNavigation } from '@react-navigation/native';
+import { useUserRegisterData } from '../../providers/user-data-provider';
+import { useUserData } from '../../providers/auth-provider';
+// Assets
+import { Close, Flag } from '../../assets';
 // Styled
 import {
   Container,
@@ -10,14 +21,6 @@ import {
   RegisterButton,
   Title,
 } from './register.styled';
-import { Background, Input } from '../../components';
-import { useNavigation } from '@react-navigation/native';
-import { useHeaderHeight } from '@react-navigation/elements';
-import { Close, Flag } from '../../assets';
-import { KeyboardAvoidingView } from 'react-native';
-import { PHONE_MASK } from './constants';
-import { useUserRegisterData } from '../../providers/user-data-provider';
-import { useUserData } from '../../providers/auth-provider';
 
 const Register: React.FC = () => {
   const { navigate } = useNavigation();

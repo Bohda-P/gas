@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+// Assets
 import { ArrowRight } from '../../assets';
 
 export const Container = styled.View`

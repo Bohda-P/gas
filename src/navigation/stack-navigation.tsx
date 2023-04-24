@@ -1,4 +1,5 @@
 import React from 'react';
+// Navigation
 import { createStackNavigator } from '@react-navigation/stack';
 // Namespace
 import { StackNavigatorRoutes } from './navigation.namespace';

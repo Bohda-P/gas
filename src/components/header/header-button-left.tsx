@@ -1,7 +1,10 @@
 import React from 'react';
-import { Button } from './header.styled';
-import { Back, Notifications } from '../../assets';
+// Hooks
 import { useNavigation } from '@react-navigation/native';
+// Assets
+import { Back, Notifications } from '../../assets';
+// Styled
+import { Button } from './header.styled';
 
 interface HeaderButtonProps {
   isBackButton?: boolean;

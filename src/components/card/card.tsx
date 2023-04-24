@@ -1,9 +1,10 @@
 import React from 'react';
+// Styled
 import { Container, IconContainer, Title } from './card.styled';
+// Assets
 import { Card, Qr } from '../../assets';
 
 const CardComponent: React.FC = () => {
-  // Todo add grn amount
   return (
     <Container>
       <IconContainer>

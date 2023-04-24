@@ -21,7 +21,6 @@ export const useUserData = (): AuthContextProps => {
 export const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
-  console.log(user);
 
   const [confirm, setConfirm] = useState<FirebaseAuthTypes.ConfirmationResult>(null);
 
@@ -65,7 +64,6 @@ export const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
   };
 
   const onAuthStateChanged = (user: any) => {
-    console.log(user);
     if (user) {
       setUser(user);
     }

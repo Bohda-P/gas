@@ -1,7 +1,17 @@
 import React, { useState } from 'react';
+// Components
+import { ConfirmCode } from './components';
 import { Background, Input } from '../../components';
 // Namespace
 import { StackNavigatorRoutes } from '../../navigation/navigation.namespace';
+// Hooks
+import { useNavigation } from '@react-navigation/native';
+import { useHeaderHeight } from '@react-navigation/elements';
+import { useUserRegisterData } from '../../providers/user-data-provider';
+import { useUserData } from '../../providers/auth-provider';
+// Assets
+import { Edit, Flag } from '../../assets';
+// Styled
 import {
   Container,
   InputContainer,
@@ -10,12 +20,6 @@ import {
   RegisterButton,
   Title,
 } from './register.styled';
-import { useNavigation } from '@react-navigation/native';
-import { useHeaderHeight } from '@react-navigation/elements';
-import { Edit, Flag } from '../../assets';
-import { useUserRegisterData } from '../../providers/user-data-provider';
-import { ConfirmCode } from './components';
-import { useUserData } from '../../providers/auth-provider';
 
 const ConfirmRegister: React.FC = () => {
   const { navigate, goBack } = useNavigation();

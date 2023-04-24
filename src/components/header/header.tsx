@@ -1,10 +1,13 @@
 import React from 'react';
-import { Container, LogoContainer, LogoIcon, LogoTitle, Title } from './header.styled';
-import HeaderButtonRight from './header-button-right';
-import HeaderButtonLeft from './header-button-left';
+// Namespace
 import { StackHeaderProps } from '@react-navigation/stack';
 import { WITH_BACK_BUTTON } from './header.namespace';
 import { StackNavigatorRoutes } from '../../navigation/navigation.namespace';
+// Components
+import HeaderButtonRight from './header-button-right';
+import HeaderButtonLeft from './header-button-left';
+// Styled
+import { Container, LogoContainer, LogoIcon, LogoTitle, Title } from './header.styled';
 
 interface HeaderProps {
   title?: string;
