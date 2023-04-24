@@ -15,9 +15,7 @@ import {
   SignOutIcon,
 } from './burger-menu.styled';
 
-interface BurgerMenuProps {}
-
-const BurgerMenu: React.FC<BurgerMenuProps> = () => {
+const BurgerMenu: React.FC = () => {
   const { user, signOut } = useUserData();
   const { navigate } = useNavigation();
 
